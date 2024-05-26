@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p class="tarefas">Tarefa(s) Concluída(s):
-      {{ todos.filter(todo => { return todo.concluido === true }).length }}
+    <p class="tasks">Completed Task(s):
+      {{ todos.filter(todo => { return todo.completed === true }).length }}
     </p>
-    <p class="tarefas">Tarefa(s) Pendente(s):
-      {{ todos.filter(todo => { return todo.concluido === false }).length }}
+    <p class="tasks">Pending Task(s):
+      {{ todos.filter(todo => { return todo.completed === false }).length }}
     </p>
       <todo v-on:delete-todo="deleteTodo(todo)"
             v-on:complete-todo="completeTodo"
@@ -17,9 +17,7 @@
 <script src="./TodoList.js" />
 
 <style scoped>
-
-p.tarefas {
+p.tasks {
   text-align: center;
 }
-
 </style>

@@ -1,39 +1,32 @@
-/**
- * Arquivo: src/components/pages/CreateTodo/CreateTodo.js
- * Data: 25/12/2018
- * Descrição: arquivo responsável por lidar com a lógica inerente ao componente 'CreateTodo'.
- * Autora: Glaucia Lemos
- */
-
 export default {
   name: 'CreateTodo',
   data() {
     return {
-      textoTitulo: '',
-      textoProjeto: '',
-      foiCriado: false,
+      titleText: '',
+      projectText: '',
+      wasCreated: false,
     };
   },
   methods: {
-    abrirForm() {
-      this.foiCriado = true;
+    openForm() {
+      this.wasCreated = true;
     },
-    fecharForm() {
-      this.foiCriado = false;
+    closeForm() {
+      this.wasCreated = false;
     },
-    enviarForm() {
-      if (this.textoTitulo.length > 0 && this.textoProjeto.length > 0) {
-        const titulo = this.textoTitulo;
-        const projeto = this.textoProjeto;
+    submitForm() {
+      if (this.titleText.length > 0 && this.projectText.length > 0) {
+        const title = this.titleText;
+        const project = this.projectText;
 
         this.$emit('create-todo', {
-          titulo,
-          projeto,
-          concluido: false,
+          title,
+          project,
+          completed: false,
         });
-        this.textoTitulo = '';
-        this.textoProjeto = '';
-        this.foiCriado = false;
+        this.titleText = '';
+        this.projectText = '';
+        this.wasCreated = false;
       }
     },
   },

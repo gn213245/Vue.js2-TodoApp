@@ -1,22 +1,22 @@
 <template>
   <div class="ui basic content center aligned segment">
-    <button class="ui basic button icon" v-on:click="abrirForm" v-show="!foiCriado">
+    <button class="ui basic button icon" v-on:click="openForm" v-show="!wasCreated">
       <i class="plus icon"></i>
     </button>
-    <div class="ui centered card" v-show="foiCriado">
+    <div class="ui centered card" v-show="wasCreated">
       <div class="content">
         <div class="ui form">
           <div class="field">
-            <label>Título</label>
-            <input v-model="textoTitulo" type="text">
+            <label>Title</label>
+            <input v-model="titleText" type="text">
           </div>
           <div class="field">
-            <label>Projeto</label>
-            <input v-model="textoProjeto" type="text">
+            <label>Project</label>
+            <input v-model="projectText" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" v-on:click="enviarForm()">Adicionar</button>
-            <button class="ui basic red button" v-on:click="fecharForm()">Cancelar</button>
+            <button class="ui basic blue button" v-on:click="submitForm()">Add</button>
+            <button class="ui basic red button" v-on:click="closeForm()">Cancel</button>
           </div>
         </div>
       </div>
@@ -24,5 +24,4 @@
   </div>
 </template>
 
-<script src="./CreateTodo" />
-
+<script src="./CreateTodo.js" />

@@ -1,11 +1,3 @@
-/**
- *
- * Arquivo: src/components/pages/TodoList/TodoList.js
- * Data: 04/12/2018
- * Descrição: arquivo responsável por lidar com a lógica inerente ao componente 'TodoList'
- * Autora: Glaucia Lemos
- *
- */
 import sweetAlert from 'sweetalert';
 import Todo from '../Todo/index';
 
@@ -18,28 +10,28 @@ export default {
   methods: {
     deleteTodo(todo) {
       sweetAlert({
-        title: 'Você tem certeza que deseja excluir a Tarefa?',
-        text: 'Atenção! Esta Tarefa será Excluída!',
+        title: 'Are you sure you want to delete this Task?',
+        text: 'Attention! This Task will be Deleted!',
         icon: 'warning',
         buttons: true,
         dangerMode: true,
-      }).then((excluirTodo) => {
-        if (excluirTodo) {
+      }).then((deleteTodo) => {
+        if (deleteTodo) {
           const todoIndex = this.todos.indexOf(todo);
           this.todos.splice(todoIndex, 1);
-          sweetAlert('Excluído!', 'Sua Tarefa foi Excluída', {
+          sweetAlert('Deleted!', 'Your Task has been deleted', {
             icon: 'success',
           });
         } else {
-          sweetAlert('Cancelado', 'Retornar para a Lista de Tarefas', 'error');
+          sweetAlert('Cancelled', 'Returning to the Task List', 'error');
         }
         return false;
       });
     },
     completeTodo(todo) {
       const todoIndex = this.todos.indexOf(todo);
-      this.todos[todoIndex].concluido = true;
-      sweetAlert('Sucesso!', 'Parabéns! A sua Tarefa está Completa!', 'success');
+      this.todos[todoIndex].completed = true;
+      sweetAlert('Success!', 'Congratulations! Your Task is Complete!', 'success');
     },
   },
 };

@@ -2,22 +2,14 @@
   <div id="app">
     <div class="ui inverted vertical masthead center aligned segment">
       <div class="ui text container">
-        <h1 class="ui inverted header"> Aplicação Todo List com Vue.js 2</h1>
-        <h2 class="ui inverted header">Glaucia Lemos
-          <div class="sub header">Software Developer</div>
+        <h1 class="ui inverted header">Todo List with Vue.js 2</h1>
+        <h2 class="ui inverted header">Edward Nguyen
+          <div class="sub header">Application Developer</div>
         </h2>
-        <h3 class="ui inverted header">Rio de Janeiro, Brasil - 2019</h3>
-        <a class="tiny ui youtube button" type="button" href="https://www.youtube.com/user/l32759">
-          <i class="youtube icon"></i>
-          YouTube
-        </a>
-        <a class="tiny ui linkedin button" type="button" href="https://www.linkedin.com/in/glaucialemos/">
+        <h3 class="ui inverted header">Melbourne, AU - 2024</h3>
+        <a class="tiny ui linkedin button" type="button" href="https://www.linkedin.com/in/huu-truong-giang-nguyen-776a99267/">
           <i class="linkedin icon"></i>
           LinkedIn
-        </a>
-        <a class="tiny ui twitter button" type="button" href="https://twitter.com/glaucia_lemos86">
-          <i class="twitter icon"></i>
-          Twitter
         </a>
       </div>
     </div>
@@ -47,32 +39,32 @@ export default {
     return {
       todos: [
         {
-          titulo: 'Todo A',
-          projeto: 'Projeto A',
-          concluido: false,
+          title: 'Todo A',
+          project: 'Project A',
+          completed: false,
         },
         {
-          titulo: 'Todo B',
-          projeto: 'Projeto B',
-          concluido: true,
+          title: 'Todo B',
+          project: 'Project B',
+          completed: true,
         },
         {
-          titulo: 'Todo C',
-          projeto: 'Projeto C',
-          concluido: false,
+          title: 'Todo C',
+          project: 'Project C',
+          completed: false,
         },
         {
-          titulo: 'Todo D',
-          projeto: 'Projeto D',
-          concluido: false,
+          title: 'Todo D',
+          project: 'Project D',
+          completed: false,
         },
       ],
     };
   },
   methods: {
-    createTodo(novoTitulo) {
-      this.todos.push(novoTitulo);
-      sweetAlert('Sucesso!', 'Nova Tarefa Adicionada.', 'success');
+    createTodo(newTodo) {
+      this.todos.push(newTodo);
+      sweetAlert('Success!', 'New Task Added.', 'success');
     },
   },
 };

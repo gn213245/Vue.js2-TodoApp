@@ -1,18 +1,9 @@
-/**
- *
- * Arquivo: src/components/pages/Todo/Todo.js
- * Data: 13/12/2018
- * Descrição: arquivo responsável por lidar com a lógica inerente ao componente 'Todo'.
- * Autora: Glaucia Lemos
- *
- */
-
 export default {
   name: 'Todo',
   props: ['todo'],
   data() {
     return {
-      ehEditavel: false,
+      isEditable: false,
     };
   },
   methods: {
@@ -22,11 +13,11 @@ export default {
     deleteTodo(todo) {
       this.$emit('delete-todo', todo);
     },
-    abrirForm() {
-      this.ehEditavel = true;
+    openForm() {
+      this.isEditable = true;
     },
-    fecharForm() {
-      this.ehEditavel = false;
+    closeForm() {
+      this.isEditable = false;
     },
   },
 };

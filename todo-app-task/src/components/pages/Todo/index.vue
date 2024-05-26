@@ -1,10 +1,10 @@
 <template>
   <div class="ui centered card">
-    <div class="content" v-show="!ehEditavel">
-      <div class="header">{{ todo.titulo }}</div>
-      <div class="meta">{{ todo.projeto }}</div>
+    <div class="content" v-show="!isEditable">
+      <div class="header">{{ todo.title }}</div>
+      <div class="meta">{{ todo.project }}</div>
       <div class="extra content">
-        <span class="right floated edit icon" v-on:click="abrirForm">
+        <span class="right floated edit icon" v-on:click="openForm">
           <i class="edit icon"></i>
         </span>
         <span class="right floated trash icon" v-on:click="deleteTodo(todo)">
@@ -12,33 +12,32 @@
         </span>
       </div>
     </div>
-    <div class="content" v-show="ehEditavel">
+    <div class="content" v-show="isEditable">
       <div class="ui form">
         <div class="field">
-          <label>Título</label>
-          <input type="text" v-model="todo.titulo">
+          <label>Title</label>
+          <input type="text" v-model="todo.title">
         </div>
         <div class="field">
-          <label>Projeto</label>
-          <input type="text" v-model="todo.projeto">
+          <label>Project</label>
+          <input type="text" v-model="todo.project">
         </div>
         <div class="ui two button attached buttons">
-          <button class="ui basic blue button" v-on:click="fecharForm">Fechar X</button>
+          <button class="ui basic blue button" v-on:click="closeForm">Close X</button>
         </div>
       </div>
     </div>
     <div
       class="ui bottom attached green basic button"
-      v-show="!ehEditavel && todo.concluido"
+      v-show="!isEditable && todo.completed"
       disabled
-    >Concluído</div>
+    >Completed</div>
     <div
       class="ui bottom attached red basic button"
       v-on:click="completeTodo(todo)"
-      v-show="!ehEditavel && !todo.concluido"
-    >Pendente</div>
+      v-show="!isEditable && !todo.completed"
+    >Pending</div>
   </div>
 </template>
 
 <script src="./Todo.js"/>
-
